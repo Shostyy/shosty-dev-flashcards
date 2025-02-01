@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { auth } from "../../firabase-config";
+import { auth } from "../../firebase-config";
+import { signOut } from "firebase/auth";
 
 export default function Home() {
   const [user, setUser] = useState(auth.currentUser);
@@ -26,6 +27,15 @@ export default function Home() {
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         asd
       </main>
+      {user && (
+        <button
+          onClick={() => {
+            signOut(auth);
+          }}
+        >
+          sign out
+        </button>
+      )}
     </div>
   );
 }

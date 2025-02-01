@@ -1,6 +1,6 @@
 "use client";
 import { signInWithPopup } from "firebase/auth";
-import { auth, googleAuthProvider } from "../../../firabase-config";
+import { auth, googleAuthProvider } from "../../../firebase-config";
 import { useRouter } from "next/navigation";
 
 export default function SignIn() {
